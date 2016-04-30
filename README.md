@@ -18,7 +18,7 @@ To get up and running:
 
 This platform is designed to be modular so that you can replace and enhance whatever area of the stack you want to change. Let's look at each piece of the stack as it is out of the box so that you can decide how you want to customize and expand.
 
-## The Server
+## The Back End
 
 The device and server set-up is inspired by Rachel White's [Robokitty](https://github.com/rachelnicole/robokitty) project. Thanks, Rachel!
 
@@ -30,14 +30,14 @@ In `server/device.js`, you'll see that currently two photoresistor cells are plu
 
 ```javascript
 photoresistor = new five.Sensor({
-        pin: "A0",
-        freq: 250
-      });
+	pin: "A0",
+	freq: 250
+});
 
-      photoresistor2 = new five.Sensor({
-        pin: "A1",
-        freq: 250
-      });
+photoresistor2 = new five.Sensor({
+	pin: "A1",
+	freq: 250
+});
 ```
 
 You could swap these out with sensors of any kind, as well as servos or other modules. You're only limited by johnny-five. You can then create sockets that emit this data to the server.
@@ -48,9 +48,11 @@ The server right now is a super simple implementation of Hapi.js in `server/serv
 
 Then, in `app.js`, socket.io is used to decorate the server. You now have data streaming from your analog sensors on your device to your server using socket.io. Way to go!
 
-## The Client
+## The Front End
 
-The client is where there is a mind-boggling possibility for customization. 
+The front end has a mind-boggling possibility for customization. 
+
+### The Client
 
 The `client` directory is home to all of your front end files. Since RxJS is a functional reactive approach that uses array operators all day long, I've included Babel in the build process so you can take advantage of ES6 niceties like arrow functions.
 
@@ -82,12 +84,13 @@ Since front end build processes are the wild west these days, and the ideal set-
 
 The bad news is that I left this super barebones right now. Ideas for the build process are many:
 
-- Add jshint
+- Add jshint or similar
 - Add the testing framework of your choice
 - Switch to webpack
 - Use a modular system so you don't have to keep track of file paths
+- Use TypeScript
 
-If anyone wants to pitch in on refining this build process, submit a PR It'd make my day.
+If you want to pitch in on refining this build process, feel free to submit a PR.
 
 ## Thanks
 
