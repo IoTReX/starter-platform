@@ -50,7 +50,7 @@ Then, in `app.js`, socket.io is used to decorate the server. You now have data s
 
 ## The Front End
 
-The front end has a mind-boggling possibility for customization. 
+The front end has a mind-boggling possibility for customization.
 
 ### The Client
 
@@ -80,7 +80,7 @@ Really, though, you can do just about anything you want with this set-up. Here a
 
 ### The Build
 
-Since front end build processes are the wild west these days, and the ideal set-up depends greatly on what framework you'reusing, I opted to go super simple with a gulp build process that uses paths defined in `package.json`.  The good news is it's very straight-forward: when you run `gulp build`, it concatenates your CSS, transpiles your ES6 JS to ES5, concatenates the JS, injects the files into `index.html`, and spits all the new files into the `dist` folder.
+Since front end build processes are the wild west these days, and the ideal set-up depends greatly on what framework you're using, I opted to go super simple with a gulp build process that uses paths defined in `package.json`.  The good news is it's very straight-forward: when you run `gulp build`, it concatenates your CSS, transpiles your ES6 JS to ES5, concatenates the JS, injects the files into `index.html`, and spits all the new files into the `dist` folder.
 
 The bad news is that I left this super barebones right now. Ideas for the build process are many:
 
